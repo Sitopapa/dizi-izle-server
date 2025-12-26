@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h2 {
+      margin-top: 0;
+      color: #4a90e2;
+      font-size: 18px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #357abd;
+    }
+    #status {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 10px;
+      color: #666;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Birlikte İzle</h2>
+  
+  <div id="connectionPanel" class="container">
+    <input type="text" id="serverUrl" placeholder="Sunucu URL (örn: http://localhost:3000)" value="http://localhost:3000">
+    <input type="text" id="roomId" placeholder="Oda Adı Girin (örn: dizi_keyfi)">
+    <button id="connectBtn">Bağlan</button>
+  </div>
+
+  <div id="controlPanel" class="container hidden">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">Bağlandı!</div>
+    <div id="currentRoomDisplay" style="text-align: center; font-size: 12px; margin-bottom: 10px;"></div>
+    <button id="disconnectBtn" style="background-color: #e24a4a;">Bağlantıyı Kes</button>
+  </div>
+
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
