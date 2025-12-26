@@ -30,6 +30,7 @@ function connectToSocket(url, roomId, sendResponse) {
         socket = io(url, {
             reconnection: true,
             reconnectionAttempts: 5,
+            transports: ['websocket', 'polling'],
             extraHeaders: {
                 "ngrok-skip-browser-warning": "true"
             }
