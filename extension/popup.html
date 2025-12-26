@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset="UTF-8">
   <style>
     body {
       width: 300px;
@@ -9,23 +11,27 @@
       background-color: #f4f4f4;
       color: #333;
     }
+
     h2 {
       margin-top: 0;
       color: #4a90e2;
       font-size: 18px;
       text-align: center;
     }
+
     .container {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     input {
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
       font-size: 14px;
     }
+
     button {
       padding: 10px;
       background-color: #4a90e2;
@@ -36,25 +42,30 @@
       font-size: 14px;
       transition: background-color 0.3s;
     }
+
     button:hover {
       background-color: #357abd;
     }
+
     #status {
       text-align: center;
       font-size: 12px;
       margin-top: 10px;
       color: #666;
     }
+
     .hidden {
       display: none;
     }
   </style>
 </head>
+
 <body>
   <h2>Birlikte İzle</h2>
-  
+
   <div id="connectionPanel" class="container">
-    <input type="text" id="serverUrl" placeholder="Sunucu URL (örn: http://localhost:3000)" value="http://localhost:3000">
+    <input type="text" id="serverUrl" placeholder="Sunucu URL (örn: http://localhost:3000)"
+      value="http://localhost:3000">
     <input type="text" id="roomId" placeholder="Oda Adı Girin (örn: dizi_keyfi)">
     <button id="connectBtn">Bağlan</button>
   </div>
@@ -69,4 +80,5 @@
 
   <script src="popup.js"></script>
 </body>
+
 </html>

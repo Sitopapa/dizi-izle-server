@@ -16,6 +16,7 @@ Arkadaşınızla her zaman sorunsuz bağlanmak için sunucuyu kendi bilgisayarı
     *   GitHub reponuzu bağlayın.
     *   Aşağıdaki ayarları yapın:
         *   **Name:** `dizi-izle-server` (veya istediğiniz bir isim)
+        *   **Root Directory:** `server` (Burası çok önemli! Dosyalarınız server klasöründeyse buraya server yazmalısınız)
         *   **Environment:** `Node`
         *   **Build Command:** `npm install`
         *   **Start Command:** `node index.js`
