@@ -8,9 +8,11 @@
         "storage"
     ],
     "host_permissions": [
-        "http://localhost:3000/*",
-        "ws://localhost:3000/*"
+        "<all_urls>"
     ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; connect-src *;"
+    },
     "action": {
         "default_popup": "popup.html"
     },

@@ -26,6 +26,9 @@ function connectToSocket(url, roomId, sendResponse) {
         socket.disconnect();
     }
 
+    // URL'nin sonundaki slash'i kaldır
+    url = url.replace(/\/$/, "");
+
     try {
         socket = io(url, {
             reconnection: true,
@@ -53,7 +56,11 @@ function connectToSocket(url, roomId, sendResponse) {
 
         socket.on('connect_error', (error) => {
             console.error('Bağlantı hatası:', error);
-            sendResponse({ success: false, error: error.message });
+            // Hatanın detayını popup'a göndermeye çalışalım (eğer popup açıksa)
+            chrome.runtime.sendMessage({ action: "connectionError", error: error.message });
+
+            // Callback varsa hatayı döndür
+            if (sendResponse) sendResponse({ success: false, error: error.message });
         });
 
         socket.on('sync_event', (data) => {
